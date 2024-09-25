@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+
+
+<div class="tag-list">
+    <h2 class="CookLikeAChief">Cuisinez comme un Chef </h2>
+
+    <div class="loop-slider" style="--duration:15951ms; --direction:normal;">
+        <div class="inner">
+            <div class="tag"><img src="/Assets/img/Plat1.jfif" alt=""></div>
+            <div class="tag"> <img src="./Assets/img/plat2.jfif" alt=""></div>
+            <div class="tag"><img src="./Assets/img/plat3.jfif" alt=""></div>
+            <div class="tag"><img src="./Assets/img/plat4.jfif" alt=""></div>
+            <div class="tag"><img src="./Assets/img/plat5.jfif" alt=""></div>
+            <div class="tag"><img src="./Assets/img/plat6.jfif" alt=""></div>
+
+            <!-- duplicated content -->
+            <div class="tag"><img src="/Assets/img/Plat1.jfif" alt=""></div>
+            <div class="tag"> <img src="./Assets/img/plat2.jfif" alt=""></div>
+            <div class="tag"><img src="./Assets/img/plat3.jfif" alt=""></div>
+            <div class="tag"><img src="./Assets/img/plat4.jfif" alt=""></div>
+            <div class="tag"><img src="./Assets/img/plat5.jfif" alt=""></div>
+            <div class="tag"><img src="./Assets/img/plat6.jfif" alt=""></div>
+        </div>
+    </div>
+
+</div>
+
+<body>
+    <header>
+        <img src="./Assets/img/recettecuisinelogo-removebg-preview.png" alt="" class="logoImg">
+        <h1 class="mainTitle">
+            <div class="words word-1" class="flexTitle">
+                <span>R</span>
+                <span>E</span>
+                <span>C</span>
+                <span>E</span>
+                <span>T</span>
+                <span>T</span>
+                <span>E</span>
+                <span>S</span>
+
+                <div class="words word-2" class="flexTitle">
+                    <span>D</span>
+                    <span>E</span>
+                </div>
+
+                <div class="words word-3" class="flexTitle">
+                    <span>C</span>
+                    <span>U</span>
+                    <span>I</span>
+                    <span>S</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>E</span>
+
+
+
+                </div>
+        </h1>
+    </header>
+
+    <main>
+        <div class="displayButtons">
+            <a href="./views/register.html" class="InscriptionButtons">Inscription</a>
+            <a href="./views/login.html" class="ConnexionButtons">Connexion</a>
+
+
+
+            <div class="overlay"></div>
+            <div class="myModal">
+                <form method ="post" id="modify-form">
+                    <button class="closeModal">X</button>
+                    <h3 class="modifTitle">Modification de recette</h3>
+
+                    <label for="title">Titre :</label>
+                    <input type="text" id="updatetitle" name="title"><br><br>
+
+                    <label for="ingredients">Ingredients :</label>
+                    <input type="text" id="updateIngredients" name="ingredients"> <br><br>
+
+                    <label for="instructions">Instructions :</label>
+                    <textarea id="updateinstructions" name="instructions"></textarea><br><br>
+
+                    <label for="timePrep">Temps de préparation :</label>
+                    <input type="number" id="updatetimePrep" name="timePrep"><br><br>
+
+                    <label for="timeCook">Temps de cuisson :</label>
+                    <input type="number" id="updatetimeCook" name="timeCook"><br><br>
+
+                    <label for="difficulty">Difficulté :</label>
+                    <select id="updatedifficulty" name="difficulty">
+                        <option value="Easy">Facile</option>
+                        <option value="Medium">Moyen</option>
+                        <option value="Hard">Difficile</option>
+                    </select><br><br>
+
+                    <label for="category">Catégorie :</label>
+                    <select id="updatecategory" name="category">
+                        <option value="entree">entrée</option>
+                        <option value="Plat">plat</option>
+                        <option value="Dessert">dessert</option>
+                    </select><br><br>
+                    <button type="button" id="modifyButton" onclick="updateRecipe()"
+                        class="modifybuttonModal">Modifier</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="MainContent">
+            <form method="POST" id="form" class="form">
+                <h2 class="addRecipeTitle">Ajouter une recette</h2>
+                <div class="divPourDisplayForm">
+                    <button class="closeModalAddRecipeForm">X</button>
+                    <label for="title" class="LabelTitle">Title:</label>
+                    <input type="text" class="inputs" id="title" name="title" required><br><br>
+
+                    <label for="ingredients" class="LabelTitle">Ingredients:</label>
+                    <textarea id="ingredients" class="inputs" name="ingredients"></textarea><br><br>
+
+                    <label for="instructions" class="LabelTitle">Instructions:</label>
+                    <textarea id="instructions" class="inputs" name="instructions" required></textarea><br><br>
+
+                    <label for="timePrep" class="LabelTitle">Time Prep (minutes):</label>
+                    <input type="number" id="timePrep" class="inputs" name="timePrep" required><br><br>
+
+                    <label for="timeCook" class="LabelTitle">Time Cook (minutes):</label>
+                    <input type="number" id="timeCook" class="inputs" name="timeCook" required><br><br>
+
+                    <label for="difficulty" class="LabelTitle">Difficulty:</label>
+                    <select id="difficulty" class="inputs" name="difficulty" required>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select><br><br>
+
+                    <label for="category" class="LabelTitle">Category:</label>
+                    <select id="category" class="inputs" name="category" required>
+                        <option value="entree">entree</option>
+                        <option value="Plat">Plat</option>
+                        <option value="Dessert">Dessert</option>
+                    </select><br><br>
+
+                    <label for="image" class="LabelTitle">Image URL:</label>
+                    <input type="text" id="image" class="inputs" name="image"><br><br>
+
+                    <button type="button" onclick="createNewRecipe()" id="buttonCreateRecipe">Envoyer</button>
+                </div>
+            </form>
+
+
+            <div>
+                <h2 class="recipeListTitle">Liste des recettes :</h2>
+                <div id="recipes-list"></div>
+
+            </div>
+    </main>
+    <footer>
+        <p>Sources : google.fr </p>
+        <p>Credits : ?</p>
+    </footer>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
